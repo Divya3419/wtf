@@ -5,9 +5,49 @@
     width:90%;
     margin:auto;
     text-align: left;
+    color:white;
 }
 
 .detail{
-    color:white;
-    border: 1px solid white;
+    
+}
+
+.plan{
+    background-color:rgb(52, 48, 48);
+    width:70%;
+    margin:auto;
+    border-radius:10px;
+    text-align:center;
+    margin-top:20px;
+}
+
+.facility{
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+}
+.list{
+
+    width:80%;
+    margin:auto;
+    border:2px solid white;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    background-color :rgb(46, 87, 46);
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.term{
+    display:flex;
+    
+    
+
+}
+.term p{
+
+    margin-right: 20px;
+    padding:10px;
+    background-color :red;
+    border-radius: 7px;
+
 }

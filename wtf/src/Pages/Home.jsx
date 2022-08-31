@@ -1,13 +1,22 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import styles from "./Home.module.css";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { getData, getDataCity } from "../Redux/action";
+
 const Home = () => {
-  const [data, setData] = useState([]);
+  const item = useSelector((state) => state.data);
+  const dispatch = useDispatch();
+  const[city,setcity]=useState("Noida")
+
   useEffect(() => {
-    axios.get("https://devapi.wtfup.me/gym/nearestgym?lat=30.325488815850512&long=78.0042384802231").then((r) => setData(r.data.data));
+    dispatch(getData(item));
   }, []);
-console.log(data)
+
+ 
+    
+
   return (
     <div className={styles.container}>
       <div className={styles.filter}>
@@ -21,36 +30,43 @@ console.log(data)
             <input type="text" placeholder="Max" />
           </div>
           <h2>Cities</h2>
-          <select name="" id="">
+          <select onChange={(e) =>{setcity(e.target.value)}}>
             <option value="">Select City</option>
-            <option value="">New Delhi</option>
-            <option value="">Ghaziabad</option>
-            <option value="">Noida</option>
-            <option value="">Delhi</option>
+            <option value="New Delhi">New Delhi</option>
+            <option value="Gazaibad">Ghaziabad</option>
+            <option value="Noida">Noida</option>
+            <option value="Delhi">Delhi</option>
           </select>
         </div>
       </div>
 
       <div className={styles.box}>
-        {data.map((ele) => (
-         <Link to={`/${ele.user_id}`} key={ele.user_id} className={styles.link}> <div key={ele.user_id} className={styles.boxcontainer}>
-            <h2>{ele.gym_name}</h2>
-            <p>
-              {ele.address1},{ele.city}
-            </p>
-            <p>
-              {ele.duration_text} | {ele.distance_text}
-            </p>
-            <div className={styles.inner}>
-              <p></p>
-              {ele.plan_price == null ? (
-                ""
-              ) : (
-                <p>₹ {ele.plan_price} for 3 Months</p>
-              )}
-              <button>Book Now</button>
+        {item.map((ele) => (
+          <Link
+            to={`/${ele.user_id}`}
+            key={ele.user_id}
+            className={styles.link}
+          >
+            {" "}
+            <div key={ele.user_id} className={styles.boxcontainer}>
+              <h2>{ele.gym_name}</h2>
+
+              <p>
+                {ele.address1},{ele.city}
+              </p>
+              <p>
+                {ele.duration_text} | {ele.distance_text}
+              </p>
+              <div className={styles.inner}>
+                <p></p>
+                {ele.plan_price == null ? (
+                  ""
+                ) : (
+                  <p>₹ {ele.plan_price} for 3 Months</p>
+                )}
+                <button>Book Now</button>
+              </div>
             </div>
-          </div>
           </Link>
         ))}
       </div>
