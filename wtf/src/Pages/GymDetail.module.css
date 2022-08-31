@@ -1,0 +1,13 @@
+.detailPage{
+    display:grid;
+
+    grid-template-columns: repeat(2,1fr);
+    width:90%;
+    margin:auto;
+    text-align: left;
+}
+
+.detail{
+    color:white;
+    border: 1px solid white;
+}

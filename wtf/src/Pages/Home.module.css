@@ -1,0 +1,75 @@
+.container {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  margin-top: 40px;
+}
+
+.filter {
+  color: white;
+  text-align: left;
+}
+.filter input {
+  font-size: 20px;
+  height: 40px;
+  width: 60%;
+  outline: 2px solid rgb(231, 222, 222);
+  border-radius: 6px;
+  background-color: rgb(80, 72, 72);
+}
+.filter select {
+  background-color: rgb(109, 104, 104);
+  height: 40px;
+  width: 60%;
+  border: 2px solid rgb(89, 69, 69);
+  border-radius: 6px;
+  font-size: 20px;
+}
+select option {
+  color: white;
+  background-color: rgb(84, 81, 81);
+  font-size: 20px;
+}
+
+.price {
+  display: flex;
+  width: 45%;
+}
+.price input {
+  margin-right: 10px;
+}
+.boxcontainer {
+  width: 90%;
+  height: 300px;
+  margin: auto;
+  background-color: #151515;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 100px;
+  color: yellow;
+  font-size: 20px;
+}
+
+.inner button {
+  background-color: rgb(206, 53, 53);
+  color: white;
+  font-size: 20px;
+  width: 10%;
+  position: absolute;
+  left: 80%;
+  margin-top: 12px;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.link{
+    text-decoration: none;
+}
