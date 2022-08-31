@@ -30,7 +30,7 @@ const GymDetail = () => {
   }, [item, id]);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/plan").then((r) => setPlan(r.data));
+    axios.get("https://blueproduct.herokuapp.com/plan").then((r) => setPlan(r.data));
   }, []);
 
   return (

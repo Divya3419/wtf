@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import styles from "./Home.module.css";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -7,15 +7,19 @@ import { getData, getDataCity } from "../Redux/action";
 
 const Home = () => {
   const item = useSelector((state) => state.data);
+  const city = useSelector((state) => state.city);
+
   const dispatch = useDispatch();
-  const[city,setcity]=useState("Noida")
 
   useEffect(() => {
     dispatch(getData(item));
   }, []);
 
- 
-    
+  useEffect(() => {
+    dispatch(getDataCity(city));
+  }, []);
+
+  console.log(city);
 
   return (
     <div className={styles.container}>
@@ -30,12 +34,11 @@ const Home = () => {
             <input type="text" placeholder="Max" />
           </div>
           <h2>Cities</h2>
-          <select onChange={(e) =>{setcity(e.target.value)}}>
+          <select>
             <option value="">Select City</option>
-            <option value="New Delhi">New Delhi</option>
-            <option value="Gazaibad">Ghaziabad</option>
-            <option value="Noida">Noida</option>
-            <option value="Delhi">Delhi</option>
+            {city.map((ele) => {
+              return <option value={ele.city}>{ele.city}</option>;
+            })}
           </select>
         </div>
       </div>
