@@ -11,6 +11,7 @@ import {
   TERMS_SUCCESS,
 } from "./action.type";
 
+
 export const getData = (payload) => (dispatch) => {
   dispatch({ type: GET_DATA_REQUEST });
   return axios
@@ -28,6 +29,7 @@ export const getData = (payload) => (dispatch) => {
     });
 };
 
+
 export const getDataCity = (payload) => (dispatch) => {
   dispatch({ type: GET_CITY_REQUEST });
   return axios
@@ -41,6 +43,7 @@ export const getDataCity = (payload) => (dispatch) => {
       return { type: GET_CITY_FAILURE };
     });
 };
+
 
 export const getDataterm = (payload) => (dispatch) => {
   dispatch({ type: TERMS_REQUEST });

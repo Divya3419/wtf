@@ -1,6 +1,6 @@
 .detailPage {
   display: grid;
- grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   width: 90%;
   margin: auto;
   text-align: left;
@@ -41,103 +41,100 @@
 }
 
 /* medimum */
-@media screen and (max-width:600px){
-    .detailPage {
-        display: grid;
-      
-        grid-template-columns: repeat(2, 1fr);
-        width: 90%;
-        margin: auto;
-        text-align: left;
-        color: white;
-      }
-      
-      .detail {
-        font-size:15px;
-        border: 2px solid white;
-      }
-      
-      .plan {
-        background-color: rgb(52, 48, 48);
-        border: 2px solid white;
-        width: 70%;
-        margin: auto;
-        border-radius: 10px;
-        text-align: center;
-        margin-top: 20px;
-      }
-      
-      .facility {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-      }
-      .list {
-        width: 80%;
-        margin: auto;
-        border: 2px solid white;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        background-color: rgb(46, 87, 46);
-        border-radius: 15px;
-        margin-bottom: 20px;
-        text-align: center;
-      }
-      .term {
-        display: flex;
-      }
-      .term p {
-        margin-right: 20px;
-        padding: 10px;
-        background-color: red;
-        border-radius: 7px;
-      }
-      
+@media screen and (max-width: 600px) {
+  .detailPage {
+    display: block;
+    width: 90%;
+    margin: auto;
+    text-align: left;
+    color: white;
+  }
+
+  .detail {
+    font-size: 15px;
+  }
+
+  .plan {
+    background-color: rgb(18, 18, 18);
+    width: 100%;
+    margin: auto;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .facility {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .list {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: rgb(46, 87, 46);
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    height: 100px;
+  }
+  .term {
+    display: flex;
+  }
+  .term p {
+    margin-right: 20px;
+    padding: 10px;
+    background-color: red;
+    border-radius: 7px;
+  }
 }
 
 /* small */
-@media screen and(max-width:300px){
-    .detailPage {
-        display: grid;
-      
-        grid-template-columns: repeat(2, 1fr);
-        width: 90%;
-        margin: auto;
-        text-align: left;
-        color: white;
-      }
-      
-      .plan {
-        background-color: rgb(52, 48, 48);
-        width: 70%;
-        margin: auto;
-        border-radius: 10px;
-        text-align: center;
-        margin-top: 20px;
-      }
-      
-      .facility {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-      }
-      .list {
-        width: 80%;
-        margin: auto;
-        border: 2px solid white;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        background-color: rgb(46, 87, 46);
-        border-radius: 15px;
-        margin-bottom: 20px;
-        text-align: center;
-      }
-      .term {
-        display: flex;
-      }
-      .term p {
-        margin-right: 20px;
-        padding: 10px;
-        background-color: red;
-        border-radius: 7px;
-      }
-      
+@media screen and (max-width: 300px) {
+  .detailPage {
+    display: block;
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    color: white;
+  }
+
+  .detail {
+    font-size: 12px;
+  }
+
+  .plan {
+    background-color: rgb(18, 18, 18);
+    width: 100%;
+    margin: auto;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 10px;
+  }
+
+  .facility {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .list {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: rgb(46, 87, 46);
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    height: 70px;
+  }
+  .term {
+    display: flex;
+  }
+  .term p {
+    margin-right: 15px;
+    padding: 8px;
+    background-color: red;
+    border-radius: 7px;
+  }
 }
