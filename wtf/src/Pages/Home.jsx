@@ -50,7 +50,7 @@ const Home = () => {
             key={ele.user_id}
             className={styles.link}
           >
-            {" "}
+          
             <div key={ele.user_id} className={styles.boxcontainer}>
               <h2>{ele.gym_name}</h2>
 
