@@ -10,16 +10,23 @@ const Home = () => {
   const city = useSelector((state) => state.city);
 
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(getData(item));
   }, []);
 
+  
   useEffect(() => {
-    dispatch(getDataCity(city));
+    dispatch(getDataCity());
   }, []);
 
-  console.log(city);
+  // console.log(city);
+  const handleChange=()=>{
+    // useEffect(() => {
+      dispatch(getData(item));
+    // }, []);
+  
+
+  }
 
   return (
     <div className={styles.container}>
@@ -34,10 +41,10 @@ const Home = () => {
             <input type="text" placeholder="Max" />
           </div>
           <h2>Cities</h2>
-          <select>
+          <select onChange={handleChange}>
             <option value="">Select City</option>
             {city.map((ele) => {
-              return <option value={ele.city}>{ele.city}</option>;
+              return <option key={ele.city} value={ele.city}>{ele.city}</option>;
             })}
           </select>
         </div>
